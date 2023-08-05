@@ -1,8 +1,0 @@
-"0","```r
-pattern <- \"(?i)castle\" 
-
-strings %>% 
-  str_detect(pattern, negate = TRUE)
-```"
-"1","[1]  TRUE FALSE  TRUE FALSE
-"

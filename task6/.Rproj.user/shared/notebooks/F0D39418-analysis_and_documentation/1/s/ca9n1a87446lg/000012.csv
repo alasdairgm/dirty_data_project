@@ -1,3 +1,0 @@
-"0","dogs_clean %>% "
-"0","  filter(str_detect(email, "".com$"")) %>% "
-"0","  count()"

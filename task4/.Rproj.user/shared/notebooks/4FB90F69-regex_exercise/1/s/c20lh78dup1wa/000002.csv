@@ -1,8 +1,0 @@
-"0","```r
-pattern <- \"\\S*@\\S*\" # here is a bit of a cheaty way, using the S not white space character class
-
-# however this would work for \"adf@afaf\" so isn't very selective in general use
-strings %>% 
-  str_extract_all(pattern)
-
-```"

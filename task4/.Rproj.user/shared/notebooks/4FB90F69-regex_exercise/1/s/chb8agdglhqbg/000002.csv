@@ -1,9 +1,0 @@
-"0","```r
-# pattern <- \"[a-z0-9]+@\" # numbers or letters
-pattern <- \"[:alnum:]+@[:lower:]+\" # can also use alnum
-
-strings %>% 
-  str_extract(pattern)
-```"
-"1","[1] \"address@email\" \"name@company\"  \"123@server\"   
-"

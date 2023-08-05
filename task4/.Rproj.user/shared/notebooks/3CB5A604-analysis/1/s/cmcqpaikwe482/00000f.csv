@@ -1,9 +1,0 @@
-"0","## good way
-candy_data %>% 
-  group_by(gender, candy) %>% 
-  summarise(
-    avg_rating = mean(rating_num, na.rm = TRUE)
-  ) %>% 
-  filter(avg_rating == max(avg_rating))
-"
-"2","`summarise()` has grouped output by 'gender'. You can override using the `.groups` argument."

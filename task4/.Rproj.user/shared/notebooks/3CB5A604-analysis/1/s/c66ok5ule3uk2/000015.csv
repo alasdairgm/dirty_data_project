@@ -1,8 +1,0 @@
-"0","# summed ratings (because 1s + 0s + -1s will give overall ranking)"
-"0","candy_data %>% "
-"0","  group_by(year, candy) %>% "
-"0","  summarise("
-"0","    sum_rating = sum(rating_num, na.rm = TRUE)"
-"0","  ) %>% "
-"0","  filter(sum_rating == max(sum_rating))"
-"2","`summarise()` has grouped output by 'year'. You can override using the `.groups` argument."

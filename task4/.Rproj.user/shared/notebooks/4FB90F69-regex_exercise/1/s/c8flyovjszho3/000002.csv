@@ -1,7 +1,0 @@
-"0","```r
-pattern <- \"[a-z0-9_\\.]+@[a-z\\.]+\"  
-
-strings %>% 
-  str_replace_all(pattern, \"REDACTED\")
-
-```"

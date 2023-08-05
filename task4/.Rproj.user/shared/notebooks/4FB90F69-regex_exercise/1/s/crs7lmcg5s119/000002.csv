@@ -1,8 +1,0 @@
-"0","```r
-pattern <- \"[a-z]@\"
-
-strings %>% 
-  str_extract(pattern)
-```"
-"1","[1] \"s@\" \"e@\" \"e@\"
-"

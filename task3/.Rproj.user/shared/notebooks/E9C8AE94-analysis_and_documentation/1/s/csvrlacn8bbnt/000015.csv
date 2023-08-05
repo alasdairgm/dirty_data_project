@@ -1,5 +1,0 @@
-"0","birds %>% "
-"0","  select(species, count) %>% "
-"0","  group_by(species) %>% "
-"0","  summarise(n_sightings = n()) %>% "
-"0","  slice_max(n_sightings)"

@@ -1,5 +1,0 @@
-"0","```r
-pattern <- \"[a-z]\" # within the range of the alphabet
-strings %>% 
-  str_detect(pattern)
-```"

@@ -1,5 +1,0 @@
-"0","```r
-pattern <- \"[A-Z]\" # upper case letters
-strings %>% 
-  str_detect(pattern)
-```"

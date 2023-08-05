@@ -1,7 +1,0 @@
-"0","```r
-pattern <- \"[abc]\" # is any one character in the string an a, b or c?
-strings %>% 
-  str_detect(pattern)
-```"
-"1","[1]  TRUE  TRUE  TRUE FALSE FALSE
-"
