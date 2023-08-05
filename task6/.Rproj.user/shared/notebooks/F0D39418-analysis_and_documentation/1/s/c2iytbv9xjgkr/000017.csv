@@ -1,0 +1,3 @@
+"0","dogs_clean %>% "
+"0","  filter(str_detect(last_name, ""[NOPQRSTUVWXYZ]"")) %>% "
+"0","  summarise(mean_age = mean(dog_age, na.rm = T))"

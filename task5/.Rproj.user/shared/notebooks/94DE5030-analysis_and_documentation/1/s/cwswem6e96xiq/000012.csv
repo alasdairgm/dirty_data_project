@@ -1,0 +1,3 @@
+"0","rwa_clean %>% "
+"0","  group_by(hand) %>% "
+"0","  summarise(mean_rwa = mean(rwa, na.rm = T))"
