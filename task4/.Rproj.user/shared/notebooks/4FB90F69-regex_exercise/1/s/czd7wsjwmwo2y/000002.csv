@@ -1,0 +1,9 @@
+"0","```r
+pattern <- \"[a-z]*@\" # any amount (0+) of letters (*) before an @ sign
+pattern <- \"[a-z]+@\" # 1+ letters (*) before an @ sign
+
+strings %>% 
+  str_extract(pattern)
+```"
+"1","[1] \"address@\" \"name@\"    \"name@\"   
+"

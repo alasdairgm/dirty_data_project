@@ -1,0 +1,16 @@
+"0","library(tidyverse)"
+"0","library(here)"
+"0",""
+"0","candy_data <- read_csv(here(""clean_data/candy_clean.csv""))"
+"2","[1mRows: [22m[34m897240[39m [1mColumns: [22m[34m8[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (5): going_out, gender, country, candy, rating
+[32mdbl[39m (3): year, person_id, age_years"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","# candy_data <- candy_data %>% "
+"0","#   mutate(rating = as.factor(rating),"
+"0","#          going_out = as.factor(going_out),"
+"0","#          gender = as.factor(gender))"
