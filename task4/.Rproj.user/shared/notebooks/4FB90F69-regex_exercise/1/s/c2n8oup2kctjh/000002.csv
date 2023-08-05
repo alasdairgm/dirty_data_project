@@ -1,0 +1,7 @@
+"0","```r
+string %>% 
+  str_detect(pattern)
+
+```"
+"1","[1] TRUE
+"

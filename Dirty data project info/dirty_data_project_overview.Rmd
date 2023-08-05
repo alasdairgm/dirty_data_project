@@ -1,0 +1,291 @@
+---
+title: "Dirty Data Project - overview"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    df_print: paged
+    css: ../../../styles.css
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center')
+```
+
+# Data cleaning 
+
+```{r, echo=FALSE, out.width = '30%'}
+    knitr::include_graphics("images/data_cleaning.png")
+```
+
+
+<br>
+
+One of the most common sayings you will likely hear for anyone working as a data analyst/scientist '80% of your time is data cleaning' - this can include (but is not limited to!) loading all your data in to a single tool for analysis; dealing with missing values; duplicates and outliers; cleaning strings; reshaping and joining.  
+<br>
+
+```{r, echo=FALSE, out.width = '50%'}
+    knitr::include_graphics("images/data_cleaning_cycle.png")
+```
+
+<br>
+
+In 2016, the IBM estimated that the US lost $3 trillion in GDP due to poor quality data and 1 in 3 business leaders did not trust the data sources they were using to make decisions.
+
+And you've probably heard the saying *'garbage in leads to garbage out'* (although in reality we would want *garbage in leads to error or warning out* because we have written checks!)
+
+Don’t panic if you find the vast majority of your time in a project spent on data cleaning, this is the normal reality, and if you rush it then it will only slow you down at the end, and may mean that you need to come back to this stage later (or even worse, you don’t, and any analysis is based on messy data!). 
+
+## Positives of data cleaning 
+People can have a negative view of data cleaning but there are many huge positives:
+
+* **You get to know your data**. By cleaning and digging into the data, you fully understand the data. This means that when you get to exploration and analysis, you already have a lot of knowledge, without which you could make a lot of incorrect assumptions. 
+* Cleaning may naturally raise relevant questions for your client, and can greatly help you understand the business. 
+* You may discover findings people haven’t spotted before e.g. issues with data collection. 
+* Cleaning will present many opportunities for problem solving. Every dataset comes with it’s own quirks and challenges and this will increase your skill set every time you are faced with a new dataset. 
+* You can view it almost as solving a puzzle! Data cleaning can be incredibly satisfying: you take a lot of messy data from which no insights can be easily extracted, and convert it to a nice cleaned and formatted dataset from which insights naturally flow. 
+
+## Cleaning is the first step
+
+Cleaning will never happen in isolation and will be the first step in the process of answering questions with data - whether that be exploratory analysis or building a predicitve model. This is why as part of the project, we will ask you to answer a few questions with the data: let these questions guide the purpose of your cleaning. So, for example, not every variable in each dataset needs to be cleaned, just those required as part of the subsequent analysis to answer the questions. 
+
+# Project overview
+
+We want you to set up a new repo for your projects, and allow us access so we can see your work. Name your repo something reasonable that explains what's in it (e.g. `dirty_data_codeclan_project_yournamehere`).  
+
+
+For each of the tasks we want you to create a separate project (`.Rproj`) in a separate folder. For every task we would like one `.R` script that cleans your data, and a separate `.Rmd` file that answers the analysis questions. Both files should be clearly coded and commented. 
+
+For your chosen task to present we would like you to write a `markdown` report document describing your project. This document should include:
+
+* A brief introduction to the dataset
+* A list of any assumptions you have made
+* The steps you took to clean the data (you don't need to write out in detail every step, but a combination of commented code chunks with surrounding overall explanations would be great). 
+* The answers to the questions presented in the task brief
+* Any other interesting analyses or conclusions you come across. 
+
+## Project structure 
+
+We would like your folder structure in the project for each task to be as follows:
+
+```
+raw_data
+data_cleaning_scripts
+clean_data
+documentation_and_analysis
+```
+
+* The `raw_data` folder will contain the unprocessed data from the classnotes folder. 
+* The `data_cleaning_scripts` folder will contain your code (clear & commented) used to clean the data. This should be a `.R` script. At the end of the script, you should write your cleaned dataset to a `.csv` file in the `clean_data` folder.
+* You should then have a separate script in the `documentation_and_analysis` folder containing your analysis code and/or `markdown` documentation. This will be a `.Rmd` file that will take as input the data in your `clean_data` folder.
+
+So your project folder should look something like this 
+
+```{r, echo=FALSE, out.width = '70%'}
+    knitr::include_graphics("images/folder_structure.png")
+```
+
+## `.gitignore` file
+
+Here is our recommended `.gitignore` file. Add and commit this in your `Git` repo as your first step. Note that this file will lead `Git` to ignore your data files.
+
+```bash
+### Data Files###
+*.csv
+*.dat
+*.efx
+*.gbr
+*.key
+*.pps
+*.ppt
+*.pptx
+*.sdf
+*.tax2010
+*.vcf
+*.xlr
+*.xls
+*.xlsx
+*.xml
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### R ###
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+### R.Bookdown Stack ###
+# R package: bookdown caching files
+/*_files/
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+```
+
+::: {.emphasis}
+This `.gitignore` template will cover the files generated by RStudio, a range of common formats for data files and any system files generated by both MacOS and Windows. In future if you need to generate a similar template you can do so [here](https://www.toptal.com/developers/gitignore).
+:::
+
+## `here()` function 
+
+Just a gentle reminder that you are using projects (`.Rproj`) and not single scripts, and so do not use the `Set Working Directory` command in `RStudio` to read in files/scripts. This is never a good idea because it is not self-contained and portable: if someone else on another machine tried to run your code, it wouldn't work properly, unless (completely by chance), they happen to mimic your directory and file structure. 
+
+However there is one small tweak that's needed when running scripts within folders. Say my cleaning file is in the folder `data_cleaning_scripts` and in this file, I read in a data file saved within `raw_data`. I may try the following
+
+```{r , eval=FALSE}
+birds <- read_csv("raw_data/birds.csv")
+```
+
+I will get an error if I run this. This is a bit of quirk in R. When you are working in a `.Rmd` file, R sets your working directory to the folder that the `.Rmd` file lives in (in this case, it would be `data_cleaning_scripts`). However, if you are working in a script file (`.R`) it makes the working directory the top level of the project (and so the code above would have worked). 
+
+We will be working in `.Rmd` files, so we need a fix for this. Luckily there is a function `here()` found in the `here` package, which figures out the top-level of your current project. And so we can use the following code:
+
+```{r , eval=FALSE}
+library(here)
+
+#test where the top level of the project directory is 
+here::here()
+
+#use this to set the path to the data file
+birds <- read_csv(here("data/birds.csv"))
+```
+
+Note: there is also function named `here()` in the `lubridate` package, so, to avoid ambiguity, you may want to specify the use of `here()` from the package `here` by using `here::here()` to avoid any conflicts if you've loaded `lubridate`. 
+
+## Before you submit your project...
+
+Make sure your code isn't using any variables that are lingering around in your global environment but you haven't created in your script. This is easy to do without realising if you aren't closing down your project at the end of the day and/or you went straight from your cleaning to your analysis without clearing your environment. 
+
+This is an important check to do not just for this project, but also any homework or anything you post to Github as otherwise no one else will be able to run your code. Like with relative filepaths this is important for reproducible work). 
+
+Complete the following steps for your cleaning script and then repeat the steps for your analysis script: 
+
+* Restart your R Session to clear your Global environment and unload any packages (so you make sure you are loading them in each script so they can be run stand alone). You can do this via *'Session' -> 'Restart R'*. 
+* Execute *'Run All'* on your script. Hopefully everything will run because you have loaded all the libraries needed in each script and all the variables used are created within your code. 
+
+
+# Expectations
+
+* The clean data should be in tidy format as covered in week 3.
+* Follow the style guide covered in week 1 for both code style, and naming data and variables. 
+* Look over the reproducibility lesson from week 1 again to help you think about how to organise your project. Following the steps there to ensure reproducibility and clarity for review, and recap the hints and tips for writing documentation. 
+* While the datasets in all of these projects are pretty small (and so processing power won't be an issue), do think about efficient ways of answering the questions. By this we don't necessarily mean that you should write code that runs as fast as possible (as this sometimes can make code more difficult to read), but rather look to avoid overcomplicating the code, and any 'hard coding'. 
+
+# Project output
+
+## MVP
+
+The MVP for the project will be completing cleaning and analysis scripts and full documentation/markdown for two tasks. We want:
+
+* EITHER task 1, task 2 OR task 3. 
+* Task 4
+
+You will need to push the two documentation/markdowns to your project repo and fill in the homework form linking to the folder it is in, **by 10am on Friday**. 
+
+On Friday we will have an open session where we will invite people to share how they approached the tasks and any difficulties they faced and how they approached these. We invite people to share their code with one another (via the classroom slack channel) through the session. 
+
+
+## Extension
+
+If you finish the MVP, you are welcome to complete any of the MVP tasks you didn't get to. Or you can do the extension tasks 5 and 6 which have been provided. If you do any extra tasks, please remember to complete all documentation as well.   
+
+If you also finished tasks 5 and 6 there are also additional practice problems in the 'extra_practice' folder. 
+
+
+
+
+
+
+
+
+
+
+

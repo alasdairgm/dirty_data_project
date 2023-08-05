@@ -1,0 +1,8 @@
+"0","# mean ratings "
+"0","candy_data %>% "
+"0","  group_by(year, candy) %>% "
+"0","  summarise("
+"0","    avg_rating = mean(rating_num, na.rm = TRUE)"
+"0","  ) %>% "
+"0","  filter(avg_rating == max(avg_rating))"
+"2","`summarise()` has grouped output by 'year'. You can override using the `.groups` argument."

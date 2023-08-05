@@ -1,0 +1,42 @@
+"0","```r
+students <- c(
+  
+  
+  # DR20
+  # \"Sarah\", \"Mark\" ,\"David\", \"Cailean\", \"Kirsty\", \"Mandip\", \"Stuart\", \"Vera\"
+  
+  # DE21
+  \"Ali\", \"Chiara\" ,\"Emma S\", \"Justyna\", \"Naomi\", \"Thijmen\", \"Tom\", \"Weezay\", \"Emma M\"
+)
+
+n_groups <- 3
+
+get_group_sizes <- function(n_students, n_groups){
+  bigger_size <- floor(n_students / n_groups) + 1
+  n_bigger <- n_students %% n_groups
+  smaller_size <- floor(n_students / n_groups)
+  n_smaller <- n_groups - n_bigger
+
+  return(c(rep(bigger_size, n_bigger), rep(smaller_size, n_smaller)))
+}
+
+included_students <- c()
+groups <- list()
+for (group_size in get_group_sizes(length(students), n_groups)){
+  available_students <- setdiff(students, included_students)
+  this_group <- sample(available_students, size = group_size, replace = FALSE)
+  groups <- append(groups, list(this_group))
+  included_students <- c(included_students, this_group)
+}
+
+groups
+```"
+"1","[[1]]
+[1] \"Thijmen\" \"Emma M\"  \"Tom\"    
+
+[[2]]
+[1] \"Emma S\" \"Chiara\" \"Naomi\" 
+
+[[3]]
+[1] \"Ali\"     \"Weezay\"  \"Justyna\"
+"

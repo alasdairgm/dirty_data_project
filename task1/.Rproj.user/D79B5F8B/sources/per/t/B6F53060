@@ -1,0 +1,26 @@
+{
+    "id": "B6F53060",
+    "path": "~/Documents/CodeclanTest/Codeclanwork/week_04/task1/data_cleaning_scripts/data_cleaning_script.R",
+    "project_path": "data_cleaning_scripts/data_cleaning_script.R",
+    "type": "r_source",
+    "hash": "3397176881",
+    "contents": "",
+    "dirty": false,
+    "created": 1686906205010.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "25,58",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1686911441,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1686911441132,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,27 @@
+{
+    "id": "73B5294F",
+    "path": "~/Documents/CodeclanTest/Codeclanwork/week_04/task3/analysis_and_documentation/analysis_and_documentation.Rmd",
+    "project_path": "analysis_and_documentation/analysis_and_documentation.Rmd",
+    "type": "r_markdown",
+    "hash": "1308825005",
+    "contents": "",
+    "dirty": false,
+    "created": 1686908352827.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "56,0",
+        "scrollLine": "50"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1686910467,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1686910467391,
+    "read_only": false,
+    "read_only_alternatives": []
+}

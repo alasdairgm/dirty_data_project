@@ -1,0 +1,77 @@
+---
+title: "Dirty data task 1 - decathlon"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+
+decathlon_clean <- read_csv("../clean_data/decathlon_clean.csv")
+```
+
+Let's check the data is looking okay
+```{r}
+head(decathlon_clean)
+```
+
+## Analysis questions
+
+# 1. Who had the longest long jump seen in the data?
+
+```{r}
+decathlon_clean %>% 
+  select(surname, event, distance_m_or_time_s) %>% 
+  filter(event == "long_jump") %>% 
+  slice_max(distance_m_or_time_s)
+```
+
+Clay had the longest long jump with 7.96m.
+
+## 2. What was the average 100m time in each competition?
+
+```{r}
+decathlon_clean %>% 
+  filter(event == "x100m") %>% 
+  group_by(competition) %>% 
+  summarise(mean(distance_m_or_time_s)) 
+```
+
+The average 100m times were 11.18s and 10.92s for the Decastar and OlympicG competitions, respectively.
+
+## 3. Who had the highest total points across both competitions?
+```{r}
+decathlon_clean %>%
+  distinct(surname, points, competition) %>% 
+  group_by(surname) %>% 
+  summarise(points_total = sum(points)) %>%
+  slice_max(points_total)
+
+```
+
+Sebrle had the highest total points across both competitions, with 17110.
+
+# 4. What was the shot_put scores for the top 3 competitors in each competition?
+
+```{r}
+decathlon_clean %>%
+  filter(event == "shot_put") %>% 
+  filter(rank <= 3) 
+  
+```
+Decastar: 1. 14.83m - Sebrle; 2. 14.26m - Clay; 3. 14.77m - Karpov
+
+OlympicG: 1. 16.36m - Sebrle; 2. 15.23m - Clay; 3. 15.93m - Karpov
+
+
+## 5. What was the average points for competitors who ran the 400m in less than 50 seconds vs those who ran 400m in more than 50 seconds?
+
+```{r}
+decathlon_clean %>% 
+  select(event, distance_m_or_time_s, points) %>% 
+  filter(event == "x400m") %>% 
+  mutate(over_50s_400m = distance_m_or_time_s > 50) %>% 
+  group_by(over_50s_400m) %>% 
+  summarise("average_points" = mean(points))
+```
+
+The average points for competitors who ran the 400m in less than 50s was 8120.5 vs 7727.2 for those who ran it in more than 50s.

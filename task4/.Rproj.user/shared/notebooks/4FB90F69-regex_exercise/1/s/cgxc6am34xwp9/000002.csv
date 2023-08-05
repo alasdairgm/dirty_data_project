@@ -1,0 +1,8 @@
+"0","```r
+pattern <- \"CodeClan\"
+
+strings %>% 
+  str_detect(pattern)
+```"
+"1","[1]  TRUE  TRUE FALSE  TRUE
+"

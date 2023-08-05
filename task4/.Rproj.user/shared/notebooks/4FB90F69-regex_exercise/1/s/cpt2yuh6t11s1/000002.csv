@@ -1,0 +1,10 @@
+"0","```r
+pattern <- \"[a-z0-9_\\.]+@[a-z\\.]+\" # include underscores and full stops
+# include double backslashes so that we get period, not its special regex meaning
+strings %>% 
+  str_extract(pattern)
+```"
+"1","[1] \"an_address@email.com\"       
+[2] \"user.name@company.co.uk\"    
+[3] \"other_person_123@server.net\"
+"
